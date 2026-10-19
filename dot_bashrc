@@ -1,0 +1,77 @@
+# # ~/.bashrc
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+shopt -s autocd
+shopt -s checkjobs 
+shopt -s dirspell 
+shopt -s histappend 
+shopt -s cdable_vars 
+
+export HISTSIZE=100000
+export HISTFILESIZE=10000000
+export HISTCONTROL="ignorespace"
+# export HISTIGNORE="ls:history"
+export HISTTIMEFORMAT='%T | %F | '
+export HISTFILE="$HOME/.bash_history"
+export PROMPT_COMMAND="history -a $HISTFILE; history -n $HISTFILE; history -w $HISTFILE $PROMPT_COMMAND"
+export PROMPT_DIRTRIM=3
+export EDITOR='/usr/bin/vim'
+
+# notes-cli home directory
+export NOTES_CLI_HOME="$HOME/Documents/Notes"
+export NOTES_CLI_PAGER='/usr/bin/more'
+
+## Notes
+notes="$HOME/Documents/Notes/"
+
+# ledger cli main file
+export LEDGER_FILE="$HOME/Documents/Finance/ledger.journal"
+
+# Dotfiles repository
+export DOTFILES_DIR="$HOME/.dotfiles"
+
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/.local/bin${PATH:+:${PATH}}"; export PATH;
+
+# Set up fzf key bindings
+source <(fzf --bash)
+
+# PS1='[\u@\h \W]\$ '
+PS2='...'
+
+alias grep='grep --color=auto'
+alias rg='rg --color=always'
+alias l='ls -At --dereference --color=always'
+alias ls='ls --color=always'
+alias lsa='ls -Alh'
+alias z='eza -a --icons=never'
+alias zz='eza -Al --icons=never'
+alias ipa='ip a'
+alias c='cat'
+alias cat='bat -p'
+alias pspc='ps aux | peco'
+alias ne='notes list -e'
+alias nls='notes list --full'
+alias nn='notes new'
+alias nsdir='$HOME/Documents/Notes/'
+alias v='vim'
+alias nvim='nvim'
+alias nv='nvim12 -u /home/hades/.config/nvim/init12.lua'
+alias b='bat --color=always'
+alias bb='bat --color=always'
+alias ta='tmux attach-session'
+alias tl='tmux list-sessions'
+alias tn='tmux new-session -s'
+alias chezmoi="chezmoi --source $DOTFILES_DIR"
+
+alias zathuf='zathura $(fzf -m --style full --preview="bat --color=always {}")'
+alias yt-dlp-clip='yt-dlp -t mp3 $(xclip -o)'
+
+JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;

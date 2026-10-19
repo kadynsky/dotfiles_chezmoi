@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/hades/dotfile_stow/dot_config/xfce4/notes'
+let g:netrw_dirhist_2='/home/hades/dotfile_stow/dot_config/xfce4'
+let g:netrw_dirhist_1='/home/hades/dotfile_stow/dot_config/xfce4/notes'
+let g:netrw_dirhist_0='/home/hades/dotfile_stow/dot_config/xfce4'
+let g:netrw_dirhist_9='/home/hades/dotfile_stow/dot_config/tmux'
+let g:netrw_dirhist_8='/etc/sv/supreme_reflector'
+let g:netrw_dirhist_7='/home/hades/Scriptorium/supreme_reflector/.git'
+let g:netrw_dirhist_6='/home/hades/dotfile_stow/dot_config/tmux'
+let g:netrw_dirhist_5='/home/hades/Scriptorium/potoograd/.gitignore'
+let g:netrw_dirhist_4='/home/hades/Scriptorium/visync/src/protobuf'

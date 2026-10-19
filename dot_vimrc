@@ -1,0 +1,16 @@
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'lervag/vimtex'
+
+call plug#end()
+
+let g:vimtex_view_method = 'zathura'
+
+"Important! Command is only to be used in /Neocortex directory, otherwise may	"
+"	cause directory structure issues					"
+"	It also, for some reason, does not automatically open zathura,		"
+"		so you have to do it manually.					"
+"										"
+":MyLaTeXCompile VIM command is ought to be used while editing .tex file	"
+command! MyLaTeXCompile VimtexCompile -pvc -synctex=0 -pdf -auxdir=../aux -outdir=../pdf
